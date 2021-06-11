@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import br.com.pacessorios.integracao.dto.products.IntegracaoDTO;
 
 @Service
-public class GestaoProdutoService {
+public class GestaoCategoriesService {
 
 	@Value(("${CONSUMER_KEY}"))
 	private String ConsumerKey;
@@ -22,8 +22,8 @@ public class GestaoProdutoService {
 	@Value("${BASE_URL}")
 	private String baseUrl;
 
-	@Value("${SUFIXO_PRODUTO}")
-	private String sufixoProduto;
+	@Value("${SUFIXO_CATEGORIES}")
+	private String sufixoCategories;
 
 	@Autowired
 	private RestTemplate restTemplate;
@@ -38,7 +38,7 @@ public class GestaoProdutoService {
 	}
 
 	private String montaUrl() {
-		return baseUrl.concat(sufixoProduto).concat("consumer_key").concat(ConsumerKey).concat("&consumer_secret")
+		return baseUrl.concat(sufixoCategories).concat("consumer_key").concat(ConsumerKey).concat("&consumer_secret")
 				.concat(consumerSecret);
 	}
 }

@@ -1,4 +1,4 @@
-package br.com.pacessorios.integracao.model;
+package br.com.pacessorios.integracao.dto.products;
 
 public class CategoriaDTO {
 

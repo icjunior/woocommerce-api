@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.pacessorios.integracao.model.IntegracaoDTO;
+import br.com.pacessorios.integracao.dto.products.IntegracaoDTO;
 import br.com.pacessorios.integracao.service.GestaoProdutoService;
 
 @RestController
@@ -19,7 +19,7 @@ public class ProdutoController {
 	@Autowired
 	private GestaoProdutoService gestaoProdutoService;
 
-	@PostMapping("batch")
+	@PostMapping
 	@ResponseStatus(code = HttpStatus.OK)
 	public ResponseEntity<IntegracaoDTO> batch(@RequestBody IntegracaoDTO produtos) {
 		ResponseEntity<IntegracaoDTO> retorno = gestaoProdutoService.batchInputProdutos(produtos);
